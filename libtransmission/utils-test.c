@@ -500,6 +500,22 @@ test_env (void)
 int
 main (void)
 {
+
+  int port;
+  char * scheme;
+  char * host;
+  char * path;
+  char * str;
+  const char * url;
+
+           char *line = NULL;
+           size_t len = 0;
+           ssize_t read;
+getline(&line, &len, stdin);
+
+  check (!tr_urlParse (line, -1, &scheme, &host, &port, &path));
+
+
   const testFunc tests[] = { test_array,
                              test_buildpath,
                              test_hex,

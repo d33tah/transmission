@@ -36,15 +36,15 @@ test_elements (void)
     int err = 0;
     tr_quark key;
 
-    in = "{ \"string\": \"hello world\","
-         "  \"escaped\": \"bell \\b formfeed \\f linefeed \\n carriage return \\r tab \\t\","
-         "  \"int\": 5, "
-         "  \"float\": 6.5, "
-         "  \"true\": true, "
-         "  \"false\": false, "
-         "  \"null\": null }";
+          char *line = NULL;
+           size_t len = 0;
+           ssize_t read;
+getline(&line, &len, stdin);
 
-    err = tr_variantFromJson (&top, in, strlen(in));
+
+
+    err = tr_variantFromJson (&top, line, strlen(line));
+    exit(0);
     check_int_eq (0, err);
     check (tr_variantIsDict (&top));
     str = NULL;
