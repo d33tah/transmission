@@ -36,12 +36,10 @@ test_elements (void)
     int err = 0;
     tr_quark key;
 
-          char *line = NULL;
-           size_t len = 0;
-           ssize_t read;
-getline(&line, &len, stdin);
-
-
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    getline(&line, &len, stdin);
 
     err = tr_variantFromJson (&top, line, strlen(line));
     exit(0);

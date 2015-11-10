@@ -508,10 +508,10 @@ main (void)
   char * str;
   const char * url;
 
-           char *line = NULL;
-           size_t len = 0;
-           ssize_t read;
-getline(&line, &len, stdin);
+  char *line = NULL;
+  size_t len = 0;
+  ssize_t read;
+  getline(&line, &len, stdin);
 
   check (!tr_urlParse (line, -1, &scheme, &host, &port, &path));
 

@@ -239,14 +239,14 @@ testParse (void)
   tr_free (saved);
   tr_variantFree (&val);
 
-    {
-           char *line = NULL;
-           size_t len = 0;
-           ssize_t read;
-getline(&line, &len, stdin);
-testString(line, true);
-exit(0);
-}
+  {
+    char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    getline(&line, &len, stdin);
+    testString(line, true);
+    exit(0);
+  }
 
   if ((err = testString ("llleee", true)))
     return err;
